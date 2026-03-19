@@ -3,146 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="proee.js"></script>
+    <title>Jyotheeswar | Full Stack Developer</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>WE Developers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * Hero Layout */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+/* Hero container */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+/* Right side image container */
+.hero-img {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 40px; /* space from right edge */
+}
+
+/* Image styling */
+.hero-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    /* Neon Glow Effect */
+    background: #0f172a;
+    padding: 10px;
+    box-shadow: 
+        0 0 20px #38bdf8,
+        0 0 40px #38bdf8,
+        0 0 60px rgba(56, 189, 248, 0.6);
+
+    border: 3px solid #38bdf8;
+
+    transition: 0.4s ease;
+}
+
+/* Hover effect */
+.hero-img img:hover {
+    transform: scale(1.08);
+    box-shadow: 
+        0 0 30px #38bdf8,
+        0 0 60px #38bdf8,
+        0 0 100px rgba(56, 189, 248, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    header {
-      background: #020617;
-      padding: 20px;
-      text-align: center;
+    .hero-img {
+        justify-content: center;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+}
+/* Image Circle
+.hero-img img {
+    width: 450px;
+    height: 500px;
+    border-radius: 60%;
+    object-fit: cover;
+    border: 5px solid #38bdf8;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+    transition: 0.3s;
+    align-items: end;
+} */
+
+.hero-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      color: #38bdf8;
+    .hero-img img {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
     }
+}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-    }
+body {
+    background: #0f172a;
+    color: #fff;
+}
 
-    .hero {
-      padding: 80px 20px;
-      text-align: center;
-    }
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+}
 
-    .hero h2 {
-      font-size: 40px;
-    }
+.logo {
+    color: #38bdf8;
+}
 
-    .btn {
-      background: #38bdf8;
-      padding: 10px 20px;
-      color: black;
-      border: none;
-      cursor: pointer;
-      margin-top: 20px;
-    }
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
 
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px;
-      gap: 20px;
-    }
+nav a:hover {
+    color: #38bdf8;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      width: 250px;
-      border-radius: 10px;
-      text-align: center;
-    }
+/* Hero */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
 
-    .card h3 {
-      color: #38bdf8;
-    }
+.hero-text h1 {
+    font-size: 48px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      margin-top: 40px;
-    }
-  </style>
-</head>
+.hero-text span {
+    color: #38bdf8;
+}
 
-<body>
+.hero-text h2 {
+    margin: 10px 0;
+    color: #94a3b8;
+}
 
-<header>
-  <h1>WE Developers</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+.hero-text p {
+    margin-bottom: 20px;
+}
 
-<section class="hero">
-  <h2>We Build Websites & Applications 🚀</h2>
-  <p>Helping businesses grow with modern digital solutions</p>
-  <button class="btn">Get Started</button>
-</section>
+.btn {
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
 
-<section class="services">
-  <div class="card">
-    <h3>Website Development</h3>
-    <p>Modern, responsive and fast websites</p>
-  </div>
+.btn:hover {
+    background: white;
+}
 
-  <div class="card">
-    <h3>Web Applications</h3>
-    <p>Custom apps using MERN stack</p>
-  </div>
+/* Sections */
+section {
+    padding: 60px 50px;
+    text-align: center;
+}
 
-  <div class="card">
-    <h3>Mobile Apps</h3>
-    <p>Android & iOS applications</p>
-  </div>
+h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
 
-  <div class="card">
-    <h3>Digital Marketing</h3>
-    <p>Grow your business online</p>
-  </div>
+/* Skills */
+.skill-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 
-  <div class="card">
-    <h3>SEO Services</h3>
-    <p>Rank your website on Google</p>
-  </div>
+.skill-box div {
+    padding: 10px 20px;
+    background: #1e293b;
+    border-radius: 5px;
+    transition: 0.3s;
+}
 
-  <div class="card">
-    <h3>Strategic Consulting</h3>
-    <p>Smart solutions for business growth</p>
-  </div>
-</section>
+.skill-box div:hover {
+    background: #38bdf8;
+    color: black;
+}
 
-<footer>
-  <p>© 2026 WE Developers | All Rights Reserved</p>
-</footer>
+/* Projects */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-</body>
-</html>
+.project-card {
+    background: #1e293b;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
-</body>
-</html>
+.project-card:hover {
+    transform: translateY(-10px);
+    background: #38bdf8;
+    color: black;
+}
+
+/* Contact */
+.contact p {
+    text-align: center;
+    color: whitesmoke;
+    
+    margin: 10px 0;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
+    <!-- Navbar -->
+    <header>
+        <h2 class="logo">JOE.Developer</h2>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+
+            <!-- Left Content -->
+            <div class="hero-text">
+                <h1>Hello, I'm <span>Jyotheeswar</span></h1>
+                <h1>Full Stack MERN Developer</h1>
+                <p>I build modern websites and applications for businesses.</p>
+                <a href="#contact" class="btn">Hire Me</a>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hero-img">
+                <img src="c:\Users\jyoth\Downloads\ChatGPT Image Mar 19, 2026, 01_33_18 PM.png" alt="My Image">
+            </div>
+
+        </div>
+    </section>
+<br>
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate Full Stack MERN Developer focused on building modern and scalable web applications.<br>
+            I specialize in creating responsive, user-friendly websites that help businesses grow online.
+            With a strong foundation in HTML, CSS, JavaScript, React, Node.js, and MongoDB, I deliver complete end-to-end solutions.
+            I am currently pursuing an MBA in HR and Marketing, which helps me understand both technology and business.
+            I have a keen interest in startups and digital innovation.
+            I enjoy solving real-world problems through clean and efficient code.
+            I am also exploring digital marketing strategies to enhance business growth.
+            I continuously learn and adapt to new technologies to stay ahead in the industry.
+            My goal is to build impactful digital products and grow a successful tech-driven company.
+            I am committed to delivering high-quality work and creating value for clients.
+        </p>
+    </section>
+ <br>
+ <br>
+    <!-- Skills -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skill-box">
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+            <div>React</div>
+            <div>Node.js</div>
+            <div>MongoDB</div>
+            <div>Expressjs</div>
+            <div>VS Code</div>
+        </div>
+    </section>
+<br>
+<br>
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+
+            <div class="project-card">
+                <h3>Agency Website</h3>
+                <p>Modern website for digital agency.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>E-commerce Store</h3>
+                <p>Online store with payment integration.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>Personal portfolio with animations.</p>
+            </div>
+               <br>
+               <br>
+            <div class="project-card">
+                <h3>Meesho clone Website</h3>
+                <p>user friendly websites for e commerce stores.</p>
+            </div>
+            <div class="project-card">
+                <h3>HTML Document </h3>
+                <p>Building HTML document for students.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+     <br>
+     <br>
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: jyothishwarnaidu219@gmail.com</p>
+        <p>Phone: +919515214251</p>
+    </section>
+  <br>
+    <footer>
+        <p>© 2026 Jyotheeswar | All Rights Reserved</p>
+    </footer>
+   
+    
+
 </body>
 </html>
